@@ -618,6 +618,38 @@
   document.addEventListener('DOMContentLoaded', function () {
     if (!isHome()) return;
 
+    // Skrýt výchozí Shoptet obsah na homepage
+    var skrytSel = [
+      '.products-list', '.product-list', '#products', '.box-products',
+      '.editorial', '.editorial-content', '.box-editorial', '.page-description',
+      '.benefits', '.benefit-bar', '.benefits-bar', '.box-benefits',
+      '.slider', '.homepage-slider', '.box-slider', '#slider',
+      '.categories', '.box-categories',
+      '[class*="editorial"]', '[class*="benefit"]',
+      '.homepage-content > section:not([id])',
+    ];
+    skrytSel.forEach(function(sel) {
+      try {
+        document.querySelectorAll(sel).forEach(function(el) {
+          el.style.display = 'none';
+        });
+      } catch(e) {}
+    });
+
+    // Skrýt přímé děti #content které nejsou naše ACE sekce
+    var content = document.querySelector('#content, main, .page-content, #page-content');
+    if (content) {
+      Array.from(content.children).forEach(function(child) {
+        var id = child.id || '';
+        var cls = child.className || '';
+        // Ponechat jen naše sekce
+        var jeNase = id.indexOf('ace-') === 0 || id === 'hero-sekce' || id === 'model' || id === 'poptavka';
+        if (!jeNase) {
+          child.style.display = 'none';
+        }
+      });
+    }
+
     buildHero();
     buildOZnacce();
     buildProKoho();

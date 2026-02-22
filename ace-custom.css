@@ -33,10 +33,42 @@ body {
 a { transition: color var(--ace-transition); }
 img { max-width: 100%; }
 
-/* ── SKRYTÍ VÝCHOZÍHO SHOPTET OBSAHU ───────────────────────── */
-.editorial,
-.editorial-content,
-.box-editorial { display: none !important; }
+/* ── SKRYTÍ VÝCHOZÍHO SHOPTET OBSAHU NA HOMEPAGE ───────────── */
+/* Produkty na homepage */
+.homepage .products-list,
+.homepage .product-list,
+.homepage #products,
+.homepage .box-products { display: none !important; }
+
+/* "Vítejte v našem obchodě" editorial blok */
+.homepage .editorial,
+.homepage .editorial-content,
+.homepage .box-editorial,
+.homepage .page-description,
+.homepage #page-description { display: none !important; }
+
+/* Benefity lišta (Garance doručení, Dárek zdarma...) */
+.homepage .benefits,
+.homepage .benefit-bar,
+.homepage .benefits-bar,
+.homepage .box-benefits,
+.homepage [class*="benefit"] { display: none !important; }
+
+/* Slider / bannery výchozí */
+.homepage .slider,
+.homepage .homepage-slider,
+.homepage .box-slider,
+.homepage #slider { display: none !important; }
+
+/* Výchozí kategorie na homepage */
+.homepage .categories,
+.homepage .box-categories,
+.homepage #categories-list { display: none !important; }
+
+/* Obecný page-content wrapper pokud je prázdný */
+.homepage .page-content > *:not([id^="ace"]):not(#hero-sekce):not(#model):not(#poptavka) {
+  display: none !important;
+}
 
 /* ── HEADER ─────────────────────────────────────────────────── */
 #header, .header {

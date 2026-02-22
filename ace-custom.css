@@ -1,0 +1,221 @@
+/* ================================================================
+   ACE VEER 3000 — SHOPTET CUSTOM CSS
+   BiosImport s.r.o. | ace.biosimport.cz
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Barlow+Condensed:wght@700;800;900&display=swap');
+
+:root {
+  --ace-orange:      #E8730A;
+  --ace-orange-dark: #C5600A;
+  --ace-dark:        #111111;
+  --ace-dark2:       #1C1C1C;
+  --ace-gray:        #F2F2F2;
+  --ace-gray2:       #E5E5E5;
+  --ace-text:        #1C1C1C;
+  --ace-muted:       #6B6B6B;
+  --ace-white:       #FFFFFF;
+  --ace-font:        'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  --ace-font-cond:   'Barlow Condensed', 'Helvetica Neue', Arial, sans-serif;
+  --ace-radius:      6px;
+  --ace-transition:  0.2s ease;
+  --ace-max:         1280px;
+}
+
+/* ── RESET ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: var(--ace-font) !important;
+  color: var(--ace-text) !important;
+  background: #fff !important;
+  -webkit-font-smoothing: antialiased;
+}
+a { transition: color var(--ace-transition); }
+img { max-width: 100%; }
+
+/* ── SKRYTÍ VÝCHOZÍHO SHOPTET OBSAHU ───────────────────────── */
+.editorial,
+.editorial-content,
+.box-editorial { display: none !important; }
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+#header, .header {
+  background: #fff !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Logo */
+.logo img, #header .logo img {
+  max-height: 64px !important;
+  width: auto !important;
+}
+
+/* Košík & ikony */
+#cart-icon a, .header-cart a, .cart-link {
+  color: var(--ace-text) !important;
+  font-weight: 700 !important;
+  font-family: var(--ace-font) !important;
+}
+
+/* ── NAVIGACE ────────────────────────────────────────────────── */
+.navigation-in, #navigation {
+  background: #fff !important;
+  border-top: 1px solid #eee !important;
+}
+
+.navigation-in > ul > li > a,
+#navigation > ul > li > a {
+  font-family:    var(--ace-font) !important;
+  font-weight:    700 !important;
+  font-size:      0.9rem !important;
+  color:          var(--ace-text) !important;
+  letter-spacing: 0.01em !important;
+  padding:        18px 16px !important;
+  text-transform: none !important;
+  transition:     color var(--ace-transition) !important;
+  position: relative !important;
+}
+
+.navigation-in > ul > li > a:hover,
+#navigation > ul > li > a:hover {
+  color: var(--ace-orange) !important;
+}
+
+/* Podtržení aktivní položky */
+.navigation-in > ul > li.active > a::after,
+.navigation-in > ul > li > a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 16px; right: 16px;
+  height: 2px;
+  background: var(--ace-orange);
+}
+
+/* Tlačítko NEZÁVAZNÁ POPTÁVKA v navigaci */
+.navigation-in > ul > li.btn-nav > a,
+#navigation > ul > li:last-child > a {
+  background:    var(--ace-orange) !important;
+  color:         #fff !important;
+  border-radius: var(--ace-radius) !important;
+  padding:       10px 20px !important;
+  font-weight:   800 !important;
+  font-size:     0.82rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-left:   12px !important;
+}
+.navigation-in > ul > li.btn-nav > a:hover,
+#navigation > ul > li:last-child > a:hover {
+  background: var(--ace-orange-dark) !important;
+  color: #fff !important;
+}
+.navigation-in > ul > li.btn-nav > a::after,
+#navigation > ul > li:last-child > a::after {
+  display: none !important;
+}
+
+/* Dropdown */
+.navigation-in .sub-menu, #navigation .sub-menu {
+  background:    #fff !important;
+  border:        1px solid #e8e8e8 !important;
+  border-radius: var(--ace-radius) !important;
+  box-shadow:    0 8px 32px rgba(0,0,0,.12) !important;
+  padding:       8px 0 !important;
+}
+.navigation-in .sub-menu a, #navigation .sub-menu a {
+  color:       var(--ace-text) !important;
+  font-weight: 600 !important;
+  font-size:   0.875rem !important;
+  padding:     9px 18px !important;
+}
+.navigation-in .sub-menu a:hover, #navigation .sub-menu a:hover {
+  color:      var(--ace-orange) !important;
+  background: #fff8f2 !important;
+}
+
+/* ── TLAČÍTKA ─────────────────────────────────────────────────  */
+.btn-cart, .add-to-cart, .btn-primary, .btn-conversion,
+button[type="submit"], input[type="submit"] {
+  font-family:    var(--ace-font) !important;
+  font-weight:    800 !important;
+  font-size:      0.82rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius:  var(--ace-radius) !important;
+  cursor:         pointer !important;
+  transition:     all var(--ace-transition) !important;
+  padding:        13px 28px !important;
+  border:         none !important;
+}
+
+.btn-cart, .add-to-cart, .btn-primary, .btn-conversion {
+  background: var(--ace-orange) !important;
+  color:      #fff !important;
+}
+.btn-cart:hover, .add-to-cart:hover, .btn-primary:hover, .btn-conversion:hover {
+  background: var(--ace-orange-dark) !important;
+  transform:  translateY(-1px) !important;
+}
+
+/* ── PRODUKTOVÉ KARTY ──────────────────────────────────────── */
+.product, .product-item {
+  border:        1px solid var(--ace-gray2) !important;
+  border-radius: var(--ace-radius) !important;
+  overflow:      hidden !important;
+  background:    #fff !important;
+  transition:    all 0.3s ease !important;
+}
+.product:hover, .product-item:hover {
+  transform:    translateY(-3px) !important;
+  box-shadow:   0 8px 24px rgba(0,0,0,.1) !important;
+  border-color: transparent !important;
+}
+.price-final { color: var(--ace-orange) !important; font-weight: 800 !important; }
+.price-before-discount { color: var(--ace-muted) !important; text-decoration: line-through !important; }
+
+/* ── FORMULÁŘE ───────────────────────────────────────────────  */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="search"], textarea, select {
+  border:        2px solid #E0E0E0 !important;
+  border-radius: var(--ace-radius) !important;
+  padding:       12px 16px !important;
+  font-family:   var(--ace-font) !important;
+  font-size:     0.95rem !important;
+  outline:       none !important;
+  transition:    border-color var(--ace-transition) !important;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--ace-orange) !important;
+}
+input[type="checkbox"], input[type="radio"] {
+  width: auto !important;
+  accent-color: var(--ace-orange) !important;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+#footer, footer, .footer {
+  background:  var(--ace-dark) !important;
+  color:       rgba(255,255,255,.7) !important;
+  border-top:  3px solid var(--ace-orange) !important;
+}
+#footer a, footer a { color: rgba(255,255,255,.55) !important; }
+#footer a:hover, footer a:hover { color: var(--ace-orange) !important; }
+#footer h3, #footer h4 {
+  color:          #fff !important;
+  font-weight:    700 !important;
+  font-size:      0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* ── BREADCRUMB, PAGINACE ─────────────────────────────────── */
+.breadcrumb a, .breadcrumbs a { color: var(--ace-muted) !important; }
+.breadcrumb a:hover { color: var(--ace-orange) !important; }
+.pagination .active { background: var(--ace-orange) !important; color: #fff !important; border-color: var(--ace-orange) !important; }
+
+/* ── RESPONZIVITA ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { font-size: 15px !important; }
+}
